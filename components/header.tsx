@@ -9,13 +9,7 @@ import Link from "next/link";
 export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar
-        position="fixed"
-        sx={{
-          backgroundColor: "transparent",
-          boxShadow: "none",
-        }}
-      >
+      <AppBar sx={{ backgroundColor: "#0D47A1" }}>
         <Toolbar
           sx={{
             zIndex: 10,
