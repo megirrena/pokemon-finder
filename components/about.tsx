@@ -9,7 +9,7 @@ const AboutPage = () => {
         flexDirection: "column",
         alignItems: "center",
         paddingTop: "2rem",
-        paddingBottom: "10rem",
+        paddingBottom: "12rem",
         boxSizing: "border-box",
       }}
     >
