@@ -2,18 +2,18 @@
 import { PokemonCard } from "./pokemon-card";
 import { useState } from "react";
 import { Typography, Grid, Box, TextField } from "@mui/material";
-import * as React from "react";
+import PokemonPagination from "./pagination";
 
 interface PokemonGridProps {
   pokemonList: any;
 }
 
-// Filter the text
+const POKEMONS_PER_PAGE = 9;
+
 export function PokemonGrid({ pokemonList }: PokemonGridProps) {
   const [searchText, setSearchText] = useState("");
-  console.log(pokemonList);
+  const [page, setPage] = useState(1);
 
-  const [page, setPage] = React.useState(1);
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);
   };
@@ -23,7 +23,13 @@ export function PokemonGrid({ pokemonList }: PokemonGridProps) {
       pokemon.name.toLowerCase().includes(searchText.toLowerCase())
     );
   };
+
   const filteredPokemonList = searchFilter(pokemonList);
+
+  const paginatedPokemonList = filteredPokemonList.slice(
+    (page - 1) * POKEMONS_PER_PAGE,
+    page * POKEMONS_PER_PAGE
+  );
 
   return (
     <Box sx={{ p: 3, color: "white" }}>
@@ -71,7 +77,7 @@ export function PokemonGrid({ pokemonList }: PokemonGridProps) {
         Pokemon Collection
       </Typography>
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-3 lg:text-left">
-        {filteredPokemonList.map((pokemon: any) => {
+        {paginatedPokemonList.map((pokemon: any) => {
           return (
             <PokemonCard
               key={pokemon.name}
@@ -81,6 +87,11 @@ export function PokemonGrid({ pokemonList }: PokemonGridProps) {
           );
         })}
       </div>
+      <PokemonPagination
+        count={Math.ceil(filteredPokemonList.length / POKEMONS_PER_PAGE)}
+        page={page}
+        onPageChange={handleChange}
+      />
     </Box>
   );
 }
