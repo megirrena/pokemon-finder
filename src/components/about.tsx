@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
+import StarRating from "./StarRating";
 
-const AboutPage = () => {
+const AboutPage: React.FC = () => {
   return (
     <Box
       sx={{
@@ -10,13 +11,13 @@ const AboutPage = () => {
         flexDirection: "column",
         alignItems: "center",
         paddingTop: "2rem",
-        paddingBottom: "12rem",
+        paddingBottom: "6rem",
         boxSizing: "border-box",
       }}
     >
       <Container maxWidth="md">
         <Typography variant="h4" gutterBottom align="center">
-          About Pokemon
+          About Pokémon
         </Typography>
         <Typography variant="body1" paragraph align="center">
           Pokémon is a Japanese media franchise consisting of video games,
@@ -33,8 +34,12 @@ const AboutPage = () => {
             marginTop: "3rem",
           }}
         >
-          <img src="./pikachu.jpeg" width={200} height={200} />
+          <img src="./pikachu.jpeg" width={200} height={200} alt="Pikachu" />
         </Box>
+        <Typography variant="h4" align="center" sx={{ marginTop: "4rem" }}>
+          How do you like Pokémon?
+        </Typography>
+        <StarRating />
       </Container>
     </Box>
   );

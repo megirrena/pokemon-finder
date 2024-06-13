@@ -22,7 +22,7 @@ export default function ButtonAppBar() {
             padding: { xs: "0 1rem", sm: "0 2rem" },
           }}
         >
-          <img src="./pokemon.svg.png" width={150} height={150} />
+          <img src="./pokemon.svg.png" width={100} height={100} />
           <Link href="/" passHref>
             <Typography
               variant="h6"
@@ -34,7 +34,7 @@ export default function ButtonAppBar() {
                 fontWeight: "bold",
               }}
             >
-              Pokemon Finder
+              Pokémon Finder
             </Typography>
           </Link>
           <Link href={"/about"}>

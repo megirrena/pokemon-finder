@@ -34,7 +34,7 @@ export function PokemonGrid({ pokemonList }: PokemonGridProps) {
   return (
     <Box sx={{ p: 3, color: "white" }}>
       <Typography variant="h5" align="center" gutterBottom>
-        Search for your Pokemon
+        Search for your Pokémon
       </Typography>
       <Grid container spacing={2} justifyContent="center">
         <Grid item xs={12} sm={6}>
@@ -74,7 +74,7 @@ export function PokemonGrid({ pokemonList }: PokemonGridProps) {
         </Grid>
       </Grid>
       <Typography variant="h4" align="center" gutterBottom sx={{ pt: 6 }}>
-        Pokemon Collection
+        Pokémon Collection
       </Typography>
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-3 lg:text-left">
         {paginatedPokemonList.map((pokemon: any) => {

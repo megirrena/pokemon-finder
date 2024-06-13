@@ -1,5 +1,5 @@
 import { getPokemon } from "@/lib/pokemonAPI";
-import { PokemonImage } from "@/components/pokemon-image";
+import { PokemonImage } from "@/src/components/pokemon-image";
 import { Typography, Box, LinearProgress } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 // pokemonName = "pikachu" -> show the Pikachu page

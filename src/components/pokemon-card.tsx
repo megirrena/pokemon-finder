@@ -1,3 +1,4 @@
+"use client";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -29,9 +30,6 @@ export function PokemonCard({ name, image }: PokemonCardProps) {
         </CardContent>
       </Link>
       <CardActions>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
         <Link href={`/${name}`} passHref>
           <Button size="small" component="a" target="_blank">
             Learn More
